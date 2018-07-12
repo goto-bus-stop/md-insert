@@ -1,0 +1,40 @@
+{
+  "name": "md-insert",
+  "description": "insert content under a markdown header or into a comment delimited region",
+  "version": "0.0.0",
+  "author": "Renée Kooi <renee@kooi.me>",
+  "bugs": {
+    "url": "https://github.com/goto-bus-stop/md-insert/issues"
+  },
+  "devDependencies": {
+    "standard": "^11.0.0"
+  },
+  "homepage": "https://github.com/goto-bus-stop/md-insert",
+  "keywords": [
+    "documentation",
+    "header",
+    "insert",
+    "markdown",
+    "mdast",
+    "region",
+    "zone"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "bin": "bin.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goto-bus-stop/md-insert.git"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "dependencies": {
+    "mdast-util-heading-range": "^2.1.0",
+    "mdast-zone": "^3.0.1",
+    "minimist": "^1.2.0",
+    "multisplice": "^1.0.0",
+    "remark": "^9.0.0",
+    "simple-concat": "^1.0.0"
+  }
+}

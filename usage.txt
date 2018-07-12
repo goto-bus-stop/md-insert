@@ -1,0 +1,16 @@
+usage: md-insert <file> [--header name] [--region name] [-i]
+
+  --header name  Insert content under the header with this name.
+  --region name  Insert content under the comment-delimited region with this
+                 name.
+
+  -i  Update <file> in place. If given, the result is written to <file>,
+      instead of to standard output.
+
+Examples:
+
+  md-insert -i README.md --header API < generated-doc.md
+
+  make-toc README.md | md-insert -i README.md --region toc
+
+  document-prop-types src/index.js | md-insert TEMPLATE.md --header Props > README.md
