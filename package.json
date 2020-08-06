@@ -1,7 +1,7 @@
 {
   "name": "md-insert",
   "description": "insert content under a markdown header or into a comment delimited region",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Renée Kooi <renee@kooi.me>",
   "bin": "bin.js",
   "bugs": {
