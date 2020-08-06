@@ -2,6 +2,8 @@
 
 insert content under a markdown header or into a comment delimited region
 
+with a cli!
+
 [Install](#install) - [Usage](#usage) - [License: Apache-2.0](#license)
 
 [![npm][npm-image]][npm-url]
