@@ -7,6 +7,7 @@
     "url": "https://github.com/goto-bus-stop/md-insert/issues"
   },
   "devDependencies": {
+    "depcheck": "^1.0.0",
     "standard": "^14.0.0",
     "tape": "^5.0.1"
   },
@@ -28,7 +29,7 @@
     "url": "https://github.com/goto-bus-stop/md-insert.git"
   },
   "scripts": {
-    "test": "standard && node test"
+    "test": "standard && depcheck && node test"
   },
   "dependencies": {
     "mdast-util-heading-range": "^2.1.0",
