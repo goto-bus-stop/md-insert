@@ -30,6 +30,7 @@ InsertStream.prototype._transform = function (chunk, enc, next) {
 InsertStream.prototype._flush = function (done) {
   var stream = this
   var opts = stream.opts
+  var newContent = opts.content
   var tree = remark.parse(stream.buffer)
 
   if (opts.header) {
@@ -38,10 +39,22 @@ InsertStream.prototype._flush = function (done) {
     zone(tree, opts.region, onrange)
   }
 
-  function onrange (start, _, end) {
-    var s = start.position.end.offset + 1 // +1 for the newline
-    var e = end ? end.position.start.offset : undefined
-    stream.push(multisplice(stream.buffer).splice(s, e, opts.content).toString())
+  function onrange (start, content, end) {
+    var s = start.position.end.offset + 1 // +1 for the newline after the header or the <!--comment-->
+    var lastParagraph = content[content.length - 1]
+    var e = lastParagraph ? lastParagraph.position.end.offset : (end ? end.position.start.offset : undefined)
+
+    // if we have a bunch of whitespace after the paragraph in the original text,
+    // don't add another one even if the new content has a \n
+    var trailingWhitespace = stream.buffer.slice(
+      lastParagraph ? lastParagraph.position.end.offset : stream.buffer.length,
+      end ? end.position.start.offset : undefined
+    )
+    if (trailingWhitespace.match(/\n/g).length >= 2) {
+      newContent = newContent.replace(/\n$/, '')
+    }
+
+    stream.push(multisplice(stream.buffer).splice(s, e, newContent).toString())
     stream.push(null)
   }
 }
