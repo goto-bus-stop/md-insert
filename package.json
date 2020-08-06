@@ -7,7 +7,6 @@
     "url": "https://github.com/goto-bus-stop/md-insert/issues"
   },
   "devDependencies": {
-    "simple-concat": "^1.0.1",
     "standard": "^14.0.0",
     "tape": "^5.0.1"
   },
@@ -36,6 +35,7 @@
     "mdast-zone": "^4.0.0",
     "minimist": "^1.2.0",
     "multisplice": "^1.0.0",
-    "remark": "^12.0.1"
+    "remark": "^12.0.1",
+    "simple-concat": "^1.0.1"
   }
 }
