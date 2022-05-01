@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "depcheck": "^1.0.0",
-    "standard": "^14.0.0",
+    "standard": "^17.0.0",
     "tape": "^5.0.1"
   },
   "homepage": "https://github.com/goto-bus-stop/md-insert",
