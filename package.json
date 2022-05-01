@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "mdast-util-heading-range": "^2.1.0",
-    "mdast-zone": "^4.0.0",
+    "mdast-zone": "^5.1.0",
     "minimist": "^1.2.0",
     "multisplice": "^1.0.0",
     "remark": "^12.0.1",
